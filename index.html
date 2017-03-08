@@ -1,0 +1,32 @@
+<html>
+<head>
+  <title>Canvason</title>
+  <script src="Canvason.js"></script>
+</head>
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    var chart = new Canvason('canvas', {
+      width: 400,
+      height: 400,
+      Yrange: { min: 0, max: 800, steps: 10, sign: "%"},
+      Xrange: { min: 0, max: 1000, steps: 10, sign:"ms"},
+      OffsetTop: 40,
+      OffsetLeft: 40
+    })
+
+    chart.drawSeries({
+      data: {
+        xValues: [0, 200, 300, 480, 960],
+        yValues: [0, 100, 300, 320, 400]
+      },
+      tag: {
+          text: "Some Graph"
+      },
+      style: {
+          color: "rgb(202, 60, 60)"
+      }
+    })
+  </script>
+</body>
+</html>
